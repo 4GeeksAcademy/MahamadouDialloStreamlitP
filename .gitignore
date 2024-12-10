@@ -1,0 +1,6 @@
+__pycache__
+.env
+.learn
+.venv
+.vscode
+solution_app.py
