@@ -19,20 +19,19 @@ class_dict={
 # Page title
 st.title('Diabetes prediction')
 
-# Set up inputs for the user to enter data - take a look at the tutorial
-# for a hint on how to do this. Also, if you are using the model
-# supplied above, you need to send it four features: Glucose,
-# Insulin, BMI and Age
+val1 = st.slider("Glucose", min_value = 0.0, max_value = 199.0, step = 0.1)
+val2 = st.slider("Insulin", min_value = 0.0, max_value = 846.0, step = 0.1)
+val3 = st.slider("BMI", min_value = 0.0, max_value = 67.1, step = 0.1)
+val4 = st.slider("Age", min_value = 21.0, max_value = 81.0, step = 0.1)
+
+
 
 # When the user clicks 'Predict'
 if st.button('Predict'):
 
-        # Format the data for input into the model. For the model
-        # Supplied above, it should be a Pandas dataframe with four
-        # columns, one for each feature and one row.
-
-        # Then do the prediction and covert the class number that the
-        # model returns to a human readable string, like 'diabetic' etc.
+        
 
     # Display the prediction to the user
+    prediction = str(model.predict([[val1, val2, val3, val4]])[0])
+    predicted_class = class_dict[prediction]
     st.write('Prediction:', predicted_class)
