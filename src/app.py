@@ -35,3 +35,5 @@ if st.button('Predict'):
     prediction = str(model.predict([[val1, val2, val3, val4]])[0])
     predicted_class = class_dict[prediction]
     st.write('Prediction:', predicted_class)
+    # 
+    # Streamlit service: https://streamlit-service-amf3.onrender.com
