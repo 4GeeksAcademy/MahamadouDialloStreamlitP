@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 # Load the model
-model_file='../models/model.pkl'
+model_file='../src/model.pkl'
 
 with open(model_file, 'rb') as input_file:
     model=pickle.load(input_file)
